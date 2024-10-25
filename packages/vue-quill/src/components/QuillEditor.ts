@@ -106,7 +106,7 @@ export const QuillEditor = defineComponent({
 
     // Register Module if not already registered
     const registerModule = (moduleName: string, module: unknown) => {
-      if (Quill?.imports && moduleName in Quill.imports) {
+      if (Quill?.import && moduleName in Quill.import) {
         return
       }
       Quill.register(moduleName, module)
@@ -126,6 +126,15 @@ export const QuillEditor = defineComponent({
           registerModule(`modules/${props.modules.name}`, props.modules.module)
         }
       }
+
+      if (
+        props.contentType === 'html' &&
+        props.content &&
+        typeof props.content === 'string'
+      ) {
+        editor.value.innerHTML = props.content
+      }
+
       // Create new Quill instance
       quill = new Quill(editor.value, options)
       // Set editor content
