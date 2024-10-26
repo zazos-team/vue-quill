@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/zazos-team/vue-quill/compare/v1.2.1...v1.2.2) (2024-10-26)
+
+
+### Bug Fixes
+
+* add dist to repo ([eb1b6c1](https://github.com/zazos-team/vue-quill/commit/eb1b6c172864a18e80e7a54797ae9197d08c10f8))
+
 ## [1.2.1](https://github.com/zazos-team/vue-quill/compare/v1.2.0...v1.2.1) (2024-10-26)
 
 

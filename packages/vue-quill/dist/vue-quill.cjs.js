@@ -1,5 +1,5 @@
 /*!
- * VueQuill @vueup/vue-quill v1.2.1
+ * VueQuill @vueup/vue-quill v1.2.2
  * https://vueup.github.io/vue-quill/
  * 
  * Includes quill v1.3.7
@@ -7,7 +7,7 @@
  * 
  * Copyright (c) 2024 Ahmad Luthfi Masruri
  * Released under the MIT license
- * Date: 2024-10-26T17:35:05.392Z
+ * Date: 2024-10-26T17:45:23.797Z
  */
 'use strict';
 
