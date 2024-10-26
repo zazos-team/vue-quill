@@ -19,6 +19,7 @@ import {
   h,
 } from 'vue'
 import { toolbarOptions, ToolbarOptions } from './options'
+import { defu } from 'defu';
 
 export type Module = { name: string; module: unknown; options?: object }
 
@@ -106,6 +107,7 @@ export const QuillEditor = defineComponent({
 
     // Register Module if not already registered
     const registerModule = (moduleName: string, module: unknown) => {
+      // @ts-expect-error wrong type
       if (Quill?.imports && moduleName in Quill.imports) {
         return
       }
@@ -180,18 +182,13 @@ export const QuillEditor = defineComponent({
           }
           return modulesOption
         })()
-        clientOptions.modules = Object.assign(
-          {},
+
+        clientOptions.modules = defu(
           clientOptions.modules,
           modules
         )
       }
-      return Object.assign(
-        {},
-        props.globalOptions,
-        props.options,
-        clientOptions
-      )
+      return defu(props.globalOptions, props.options, clientOptions);
     }
 
     const maybeClone = (delta: ContentPropType) => {
