@@ -1,3 +1,19 @@
+## [1.2.2](https://github.com/zazos-team/vue-quill/compare/v1.2.1...v1.2.2) (2024-10-26)
+
+
+### Bug Fixes
+
+* add dist to repo ([eb1b6c1](https://github.com/zazos-team/vue-quill/commit/eb1b6c172864a18e80e7a54797ae9197d08c10f8))
+
+## [1.2.1](https://github.com/zazos-team/vue-quill/compare/v1.2.0...v1.2.1) (2024-10-26)
+
+
+### Bug Fixes
+
+* options merge ([6ae67c2](https://github.com/zazos-team/vue-quill/commit/6ae67c2453523b639da4e6204f9f44d5847083e8))
+* release ([6aec7af](https://github.com/zazos-team/vue-quill/commit/6aec7afb596d801b80a7ec4b98112bbd40949259))
+* typecheck ([205325e](https://github.com/zazos-team/vue-quill/commit/205325ebe94d7e415b8de7cf53227236312ff187))
+
 # [1.0.0-beta.8](https://github.com/vueup/vue-quill/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2022-02-17)
 
 

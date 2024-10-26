@@ -36,6 +36,7 @@
           changelogFile: `${rootDir}/CHANGELOG.md`,
         },
       ],
+      '@semantic-release/npm',
       [
         '@semantic-release/github',
         {
@@ -85,7 +86,7 @@
     const result = await semanticRelease(
       {
         branches: releaserc.branches,
-        repositoryUrl: 'git@github.com:zazos-team/vue-quill.git',
+        repositoryUrl: pkg.repository.url,
         plugins: releaserc.plugins,
         dryRun: preview ? true : false,
         ci: preview ? false : true,

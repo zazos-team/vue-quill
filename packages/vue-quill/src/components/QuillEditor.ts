@@ -336,8 +336,8 @@ export const QuillEditor = defineComponent({
       return quill?.root.innerHTML ?? ''
     }
 
-    const setHTML = (html: string) => {
-      if (quill) quill.root.innerHTML = html
+    const setHTML = (html: string, source: Sources = 'api') => {
+      pasteHTML(html, source)
     }
 
     const pasteHTML = (html: string, source: Sources = 'api') => {
