@@ -107,6 +107,7 @@ export const QuillEditor = defineComponent({
 
     // Register Module if not already registered
     const registerModule = (moduleName: string, module: unknown) => {
+      // @ts-expect-error wrong type
       if (Quill?.imports && moduleName in Quill.imports) {
         return
       }
