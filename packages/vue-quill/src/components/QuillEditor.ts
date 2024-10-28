@@ -128,6 +128,12 @@ export const QuillEditor = defineComponent({
           registerModule(`modules/${props.modules.name}`, props.modules.module)
         }
       }
+
+      // Set initial editor content
+      if (props.contentType === 'html' && props.content && typeof props.content === 'string') {
+        editor.value.innerHTML = props.content;
+      }
+
       // Create new Quill instance
       quill = new Quill(editor.value, options)
       // Set editor content
