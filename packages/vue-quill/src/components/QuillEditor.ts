@@ -314,22 +314,7 @@ export const QuillEditor = defineComponent({
       return quill?.getContents(index, length)
     }
 
-    const setEditorSelection  = (range: RangeStatic)  =>{
-      if (!quill) return;
-
-      if (range) {
-        // Validate bounds before applying.
-        const length = quill.getLength();
-        range.index = Math.max(0, Math.min(range.index, length-1));
-        range.length = Math.max(0, Math.min(range.length, (length-1) - range.index));
-      }
-
-      nextTick(() => quill?.setSelection(range))
-    }
-
     const setContents = (content: ContentPropType, source: Sources = 'api') => {
-      const sel = quill?.getSelection();
-
       const normalizedContent = !content
         ? props.contentType === 'delta'
           ? new Delta()
@@ -343,7 +328,6 @@ export const QuillEditor = defineComponent({
         quill?.setContents(normalizedContent as Delta, source)
       }
       internalModel = maybeClone(normalizedContent)
-      if (sel && quill?.hasFocus()) setEditorSelection(sel);
     }
 
     const getText = (index?: number, length?: number): string => {
