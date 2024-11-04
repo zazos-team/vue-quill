@@ -323,7 +323,8 @@ export const QuillEditor = defineComponent({
         range.index = Math.max(0, Math.min(range.index, length-1));
         range.length = Math.max(0, Math.min(range.length, (length-1) - range.index));
       }
-      quill.setSelection(range);
+
+      nextTick(() => quill?.setSelection(range))
     }
 
     const setContents = (content: ContentPropType, source: Sources = 'api') => {
