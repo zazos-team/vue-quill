@@ -343,7 +343,7 @@ export const QuillEditor = defineComponent({
     }
 
     const setHTML = (html: string) => {
-      if (quill) quill.root.innerHTML = html
+      if (quill && !quill.hasFocus()) quill.root.innerHTML = html
     }
 
     const pasteHTML = (html: string, source: Sources = 'api') => {
