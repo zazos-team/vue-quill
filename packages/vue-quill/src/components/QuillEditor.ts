@@ -19,7 +19,7 @@ import {
   h,
 } from 'vue'
 import { toolbarOptions, ToolbarOptions } from './options'
-import { defu } from 'defu';
+import { defu } from 'defu'
 
 export type Module = { name: string; module: unknown; options?: object }
 
@@ -130,8 +130,12 @@ export const QuillEditor = defineComponent({
       }
 
       // Set initial editor content
-      if (props.contentType === 'html' && props.content && typeof props.content === 'string') {
-        editor.value.innerHTML = props.content;
+      if (
+        props.contentType === 'html' &&
+        props.content &&
+        typeof props.content === 'string'
+      ) {
+        editor.value.innerHTML = props.content
       }
 
       // Create new Quill instance
@@ -189,12 +193,9 @@ export const QuillEditor = defineComponent({
           return modulesOption
         })()
 
-        clientOptions.modules = defu(
-          clientOptions.modules,
-          modules
-        )
+        clientOptions.modules = defu(clientOptions.modules, modules)
       }
-      return defu(props.globalOptions, props.options, clientOptions);
+      return defu(props.globalOptions, props.options, clientOptions)
     }
 
     const maybeClone = (delta: ContentPropType) => {
@@ -366,7 +367,7 @@ export const QuillEditor = defineComponent({
     watch(
       () => props.content,
       (newContent) => {
-        if (!quill || !newContent || internalModelEquals(newContent)) return
+        if (!quill || internalModelEquals(newContent)) return
 
         setContents(newContent)
       },
